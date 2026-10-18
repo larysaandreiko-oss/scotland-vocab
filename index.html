@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Scotland Vocabulary Practice</title>
+<style>
+:root{--bg:#f7f6f2;--card:#fff;--tx:#1f2430;--mu:#6b7080;--ac:#2b5d9e;--ok:#2e8b57;--no:#c0392b;--bd:#d9d7cf;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171a21;--card:#222732;--tx:#e8eaf0;--mu:#9aa0b0;--ac:#7fb0ee;--ok:#5cc08a;--no:#ee7b6e;--bd:#3a4050}}
+html,body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.3rem;margin:0 0 4px}.sub{color:var(--mu);margin:0 0 12px;font-size:.9rem}
+nav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+button{font:inherit;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:8px;padding:7px 12px;cursor:pointer}
+button.on,button.pri{background:var(--ac);color:#fff;border-color:var(--ac)}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:16px;margin-bottom:12px}
+input{font:inherit;background:var(--bg);color:var(--tx);border:1px solid var(--bd);border-radius:6px;padding:4px 8px}
+.ok{color:var(--ok);border-color:var(--ok)!important}.no{color:var(--no);border-color:var(--no)!important}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.grid button{text-align:left}.done{opacity:.35;pointer-events:none}.sel{background:var(--ac);color:#fff}
+.fc{min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:1.5rem;cursor:pointer}
+.bank{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}.bank span{background:var(--bg);border:1px solid var(--bd);border-radius:14px;padding:2px 10px;font-size:.9rem}
+.row{margin:10px 0}.fb{min-height:1.4em;font-weight:600}.mu{color:var(--mu);font-size:.9rem}
+.g input{width:7.5em}
+</style></head><body><main>
+<h1>Scotland Vocabulary Practice</h1>
+<p class="sub">Six exercises · 59 words</p>
+<nav id="nav"></nav><div id="app"></div>
+</main>
+<script>
+const RAW=`similarity|сходство
+pidgin|пиджин (упрощённый смешанный язык)
+to simplify|упрощать
+pluralistic|плюралистический; многообразный
+mutual|взаимный
+beneficial|полезный
+to proclaim|провозглашать; объявлять
+encounter|встреча; столкновение
+to descend from|происходить от
+to pledge|обещать; клясться
+exceptional|исключительный
+Scot|шотландец/шотландка
+weaver|ткач/ткачиха
+to chop|рубить; нарезать
+heiress|наследница
+alliance|союз; альянс
+rebel|повстанец; бунтарь
+contribution|вклад; участие
+enlightenment|Просвещение; просветление
+influential|влиятельный
+to advance|продвигать; развивать
+refrigerator|холодильник
+oral|устный
+inhabitant|житель/-ница
+to dine|ужинать
+to sip|пить маленькими глотками
+upside down|вверх ногами
+pipe|труба; трубка (волынки)
+tartan|тартан; шотландка
+glance|беглый взгляд
+to disintegrate|распадаться
+pile|куча; стопка
+cottage|коттедж; домик
+loch|озеро (в Шотландии)
+to tower|возвышаться
+curtain|занавеска; штора
+isolated|уединённый; изолированный
+casual|случайный; непринуждённый
+due to|из-за; вследствие
+inexplicable|необъяснимый
+to stock up|запасаться
+exposed|незащищённый; открытый всем ветрам
+gale|шторм; сильный ветер
+to reassure|успокаивать; ободрять
+slot|щель; прорезь
+burglar|взломщик; вор
+midge|мошка
+to cope with|справляться с
+downside|обратная сторона; недостаток
+enchanted|заколдованный; очарованный
+mythical creature|мифическое существо
+fairy|фея
+stream|ручей
+shore|берег
+mischievous|озорной; проказливый
+hump|горб
+remote|отдалённый; глухой
+content|довольный`;
+const W=RAW.split("\n").map(l=>{const[a,b]=l.split("|");return{en:a,ru:b,sh:b.split(/[;(]/)[0].trim()}});
+const S=[["There is a striking ___ between the two stories.","similarity"],["Traders developed a ___ English to communicate.","pidgin"],["We should ___ the rules so everyone understands them.","simplify"],["Canada is a ___ society with many cultures.","pluralistic"],["Good teamwork is based on ___ respect.","mutual"],["Exercise is ___ for your health.","beneficial"],["The country ___ its independence in 1991.","proclaimed"],["We had a chance ___ with an old friend in town.","encounter"],["Many Americans are ___ from immigrants.","descended"],["The company ___ millions to support the project.","pledged"],["She has ___ talent for music.","exceptional"],["He is a proud ___ and wears a kilt on special days.","Scot"],["A skilled ___ makes beautiful cloth.","weaver"],["Please ___ the onions finely.","chop"],["The wealthy ___ to the throne was only ten years old.","heiress"],["The two countries formed an ___ against their common enemy.","alliance"],["The ___ fought against the government.","rebels"],["Her ___ to the project was enormous.","contribution"],["The Age of ___ was a period of reason and science.","Enlightenment"],["He is an ___ figure in modern politics.","influential"],["Scientists work to ___ our knowledge.","advance"],["Keep the milk in the ___.","refrigerator"],["I have an ___ exam in English tomorrow.","oral"],["The village has about 300 ___.","inhabitants"],["They like to ___ out at expensive restaurants.","dine"],["She ___ her tea slowly by the window.","sipped"],["He turned the room ___ looking for his keys.","upside down"],["At first ___, the picture looks normal.","glance"],["The match was cancelled ___ bad weather.","due to"],["The old building began to ___ into pieces.","disintegrate"],["There was a ___ of books on his desk.","pile"],["Insert a coin into the ___.","slot"]];
+const H=["сходство","пиджин","упрощать","плюралистический","взаимный","полезный","провозглашать","встреча","происходить от","обещать","исключительный","шотландец","ткач","рубить","наследница","союз","повстанец","вклад","Просвещение","влиятельный","продвигать","холодильник","устный","житель","ужинать","пить маленькими глотками","вверх ногами","беглый взгляд","из-за","распадаться","куча","щель"];
+const D=[["At the travel agency",["Agent: Good morning! How can I help?","Anna: We’d like a holiday in the Highlands, somewhere quiet, in a [отдалённый|remote] area.","Agent: I have a lovely [коттедж|cottage] next to a [озеро|loch]. It’s very [уединённый|isolated].","Anna: Is it [незащищённый|exposed] to the wind?","Agent: A little. A [шторм|gale] can be strong in autumn, but the thick [шторы|curtains] keep the heat in.","Anna: And in summer?","Agent: The only [недостаток|downside] is the [мошка|midges]. Bring spray, and [запасаться|stock up/stock] on food before you arrive.","Anna: Fine, I think we can [справляться с|cope with/cope] that."]],["Family history",["Ben: Do you know where your family comes from?","Mia: Yes, we are [происходить от|descended] from Scottish farmers.","Ben: Really?","Mia: My great-grandfather was a proud [шотландец|Scot] and a skilled [ткач|weaver]. He wore [тартан|tartan] on Sundays and played the [трубка (волынки)|pipes/pipe].","Ben: Amazing! There is a striking [сходство|similarity] between you and his photo.","Mia: Thanks! Gran says he was an [исключительный|exceptional] man, and he even spoke [пиджин|pidgin] English with foreign sailors."]],["History class",["Teacher: Who can tell me about the Age of [Просвещение|Enlightenment]?","Student: It was a time when [влиятельный|influential] thinkers wanted to [продвигать|advance] science and knowledge.","Teacher: Good. What was an important [вклад|contribution] of Scotland?","Student: Many Scottish thinkers worked on science and philosophy. Scotland also had famous [повстанец|rebels] who fought against England.","Teacher: And sometimes the Scots formed an [союз|alliance] with other countries. Who [провозглашать|proclaimed] himself king in 1306?","Student: Robert the Bruce! And wasn’t there a young [наследница|heiress] to the throne who was sent to France?","Teacher: Yes, Mary, Queen of Scots."]],["In the kitchen",["Dad: Could you [рубить|chop] the vegetables, please?","Kid: Sure. First I need to take them out of the [холодильник|refrigerator].","Dad: Careful! Don’t leave a [куча|pile] of dishes on the table.","Kid: Sorry! Wait, the whole kitchen is [вверх ногами|upside down]!","Dad: That’s because we’ll [ужинать|dine] at eight, like in a restaurant, and Grandma will [пить маленькими глотками|sip] her tea while we cook.","Kid: Look, there’s a coin stuck in the [щель|slot] of the toaster!"]],["At the community centre",["A: Sorry I’m late, [из-за|due to] the traffic.","B: No problem, it’s a [непринуждённый|casual] meeting.","A: Our town is a [плюралистический|pluralistic] community, isn’t it?","B: Yes, all [житель|inhabitants] show [взаимный|mutual] respect, and that is [полезный|beneficial] for everyone.","A: Last year the council [обещать|pledged] money for a new hall.","B: Great, students can practise for their [устный|oral] exams there. I also had a chance [встреча|encounter] with the mayor. He wants to [упрощать|simplify] the rules for new clubs."]],["A strange night",["Leo: Something [необъяснимый|inexplicable] happened last night.","Sara: What was it?","Leo: I heard a noise and thought it was a [взломщик|burglar]!","Sara: Did you call the police?","Leo: No, I [успокаивать|reassured] myself and went downstairs. It was only a [озорной|mischievous] cat.","Sara: Phew! Did you see it clearly?","Leo: No, only a quick [беглый взгляд|glance]. Are you [довольный|content] now? The old garden fence is [распадаться|disintegrating] anyway."]],["Grandma’s story",["Gran: Let me tell you about an [заколдованный|enchanted] forest.","Kid: Were there [мифическое существо|mythical creatures/mythical creature]?","Gran: Yes! A [фея|fairy] lived by a [ручей|stream] near the [берег|shore] of a lake.","Kid: Was it a big lake?","Gran: Huge. High mountains [возвышаться|towered/tower] over it.","Kid: Was there a monster?","Gran: Only an old camel with a [горб|hump]."]]];
+const STORY=`Last summer we rented a small {cottage} on the {shore} of a {loch} in the Scottish Highlands. It was in a {remote} area, so we had to {stock} up on food first. At first {glance} it was perfect: mountains {towered} over the water. But the house was {exposed} to the wind, and one night a {gale} made the {curtains} shake. My son was scared, but I {reassured} him that the roof was safe. The other {downside} was the {midges}, and it was hard to {cope} with their bites. In the evenings we {sipped} hot tea and read about the {mythical creatures} of the {enchanted} forest nearby. Nobody saw the Loch Ness Monster, but a {mischievous} fairy probably hid my socks, and we left feeling very {content}.`;
+const sh=a=>[...a].sort(()=>Math.random()-.5),$=s=>document.querySelector(s),A=$("#app");
+const norm=s=>s.toLowerCase().replace(/[’']/g,"'").replace(/\s+/g," ").trim();
+const T={mt:["Matching",mt],gs:["Gapped sentences",gs],dl:["Dialogues",dl],st:["Gapped story",st],qz:["Quiz",qz]};
+$("#nav").innerHTML=Object.entries(T).map(([k,v])=>`<button data-k="${k}">${v[0]}</button>`).join("");
+$("#nav").onclick=e=>{const k=e.target.dataset.k;if(!k)return;[...$("#nav").children].forEach(b=>b.classList.toggle("on",b.dataset.k==k));T[k][1]()};
+function mt(){const p=sh(W).slice(0,8),R=sh(p);let s=null,ok=0,er=0;A.innerHTML=`<p class="mu">Tap an English word, then its Russian meaning.</p><div class="grid"><div id="L"></div><div id="R"></div></div><p class="fb" id="f"></p><button class="pri" id="a">New round</button>`;
+$("#L").innerHTML=p.map((w,i)=>`<button style="width:100%;margin-bottom:8px" data-i="${i}">${w.en}</button>`).join("");
+$("#R").innerHTML=R.map(w=>`<button style="width:100%;margin-bottom:8px" data-e="${w.en}">${w.sh}</button>`).join("");
+$("#a").onclick=mt;
+$("#L").onclick=e=>{const b=e.target.closest("button");if(!b)return;$("#L .sel")?.classList.remove("sel");b.classList.add("sel");s=b};
+$("#R").onclick=e=>{const b=e.target.closest("button");if(!b||!s)return;if(b.dataset.e==s.textContent){s.classList.add("done");b.classList.add("done");s.classList.remove("sel");s=null;ok++}else{er++;b.classList.add("no");setTimeout(()=>b.classList.remove("no"),500)}$("#f").textContent=ok==8?`Done! Mistakes: ${er}`:`Matched ${ok}/8 · Mistakes: ${er}`}}
+function gs(){const d=S;A.innerHTML=`<p class="mu">Fill each gap with the English word that matches the Russian hint.</p>`+d.map((x,i)=>`<div class="row">${i+1}. ${x[0].replace("___",`<input data-a="${x[1]}" size="12"> <span class="mu">(${H[i]})</span>`)}</div>`).join("")+`<button class="pri" id="c">Check</button> <button id="r">Reset</button><p class="fb" id="f"></p>`;
+$("#c").onclick=()=>{let n=0;A.querySelectorAll("input").forEach(i=>{const k=norm(i.value)==norm(i.dataset.a);i.className=k?"ok":"no";n+=k});$("#f").textContent=`Score: ${n}/${d.length}`};$("#r").onclick=gs}
+function dl(){A.innerHTML=`<p class="mu">Each Russian hint replaces an English word or phrase. Type the English.</p>`+D.map(d=>`<div class="card"><b>${d[0]}</b>`+d[1].map(l=>{const k=l.indexOf(": ");return `<div class="row"><b>${l.slice(0,k)}:</b> ${l.slice(k+2).replace(/\[([^|\]]+)\|([^\]]+)\]/g,(m,r,a)=>`<input data-a="${a}" size="11" autocapitalize="off"> <span class="mu">(${r})</span>`)}</div>`}).join("")+`</div>`).join("")+`<button class="pri" id="c">Check</button> <button id="r">Reset</button><p class="fb" id="f"></p>`;
+$("#c").onclick=()=>{let n=0,t=0;A.querySelectorAll("input").forEach(i=>{t++;const k=i.dataset.a.split("/").map(norm).includes(norm(i.value));i.className=k?"ok":"no";n+=k});$("#f").textContent=`Score: ${n}/${t}`};$("#r").onclick=dl}
+function st(){const HS={cottage:"коттедж",shore:"берег",loch:"озеро",remote:"отдалённый",stock:"запасаться",glance:"беглый взгляд",towered:"возвышаться",exposed:"незащищённый",gale:"шторм",curtains:"шторы",reassured:"успокаивать",downside:"недостаток",midges:"мошка",cope:"справляться с",sipped:"пить маленькими глотками","mythical creatures":"мифическое существо",enchanted:"заколдованный",mischievous:"озорной",content:"довольный"};let h=STORY.replace(/\{([^}]+)\}/g,(m,w)=>`<span class="g"><input data-a="${w}" autocapitalize="off"> <span class="mu">(${HS[w]})</span></span>`);A.innerHTML=`<div class="card" style="line-height:2.2">${h}</div><button class="pri" id="c">Check</button> <button id="r">Reset</button><p class="fb" id="f"></p>`;
+$("#c").onclick=()=>{let n=0,t=0;A.querySelectorAll("input").forEach(i=>{t++;const a=i.dataset.a,v=norm(i.value),k=v==a||(a=="stock"&&v=="stock up");i.className=k?"ok":"no";n+=k});$("#f").textContent=`Score: ${n}/${t}`};$("#r").onclick=st}
+function qz(){let d=sh(W).slice(0,15),i=0,n=0;const r=()=>{if(i>=d.length){A.innerHTML=`<div class="card"><h2>Score: ${n}/${d.length}</h2><button class="pri" id="a">Again</button></div>`;$("#a").onclick=qz;return}
+const w=d[i],o=sh([w,...sh(W.filter(x=>x!=w)).slice(0,3)]);A.innerHTML=`<p class="mu">Question ${i+1}/${d.length}</p><div class="card fc" style="min-height:90px">${w.en}</div>`+o.map(x=>`<button style="display:block;width:100%;margin-bottom:8px;text-align:left" data-e="${x.en}">${x.sh}</button>`).join("")+`<p class="fb" id="f"></p>`;
+A.onclick=e=>{const b=e.target.closest("button[data-e]");if(!b)return;A.onclick=null;const k=b.dataset.e==w.en;n+=k;b.classList.add(k?"ok":"no");if(!k)A.querySelector(`[data-e="${w.en}"]`).classList.add("ok");$("#f").innerHTML=`${w.ru} <button class="pri" id="x">Next</button>`;$("#x").onclick=()=>{i++;r()}}};r()}
+$("#nav button").click();
+</script></body></html>
